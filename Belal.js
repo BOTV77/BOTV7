@@ -1,65 +1,146 @@
-const { spawn } = require('child_process');
-const axios = require('axios');
-const logger = require('./utils/logger');
-const express = require('express');
-const path = require('path');
-
-const app = express();
-const port = process.env.PORT || 5000;
-
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
-});
-
-app.listen(port, () => {
-    logger.info(`Server running on port ${port}`);
-})
-.on('error', err => {
-    if (err.code === 'EACCES') {
-        logger.error('Server error: permission denied');
-    } else {
-        logger.error(`Server error: ${err.message}`);
+[
+    {
+        "key": "dbln",
+        "value": "%7B%2261569342692458%22%3A%22BvrgiyxU%22%2C%2261556698541010%22%3A%22sz7Q77Gk%22%2C%2261554676084025%22%3A%22cvQpGeUq%22%2C%2261568483307243%22%3A%22g6ufeWL7%22%2C%2261567333027225%22%3A%22Fzsod4oR%22%2C%2261556595238526%22%3A%22aiu37SS9%22%2C%22100058085520102%22%3A%22stiScO8I%22%2C%2261579853908441%22%3A%22f1v7niEy%22%2C%2261583226778968%22%3A%2208n39UGe%22%7D",
+        "domain": "facebook.com",
+        "path": "/login/device-based/",
+        "hostOnly": false,
+        "creation": "2025-11-07T17:20:34.047Z",
+        "lastAccessed": "2025-11-07T17:20:34.049Z"
+    },
+    {
+        "key": "sb",
+        "value": "UgXMaDoU9froNIBF9PnL94UE",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2025-11-07T17:20:34.049Z",
+        "lastAccessed": "2025-11-07T17:20:34.049Z"
+    },
+    {
+        "key": "ps_l",
+        "value": "1",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2025-11-07T17:20:34.049Z",
+        "lastAccessed": "2025-11-07T17:20:34.049Z"
+    },
+    {
+        "key": "ps_n",
+        "value": "1",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2025-11-07T17:20:34.049Z",
+        "lastAccessed": "2025-11-07T17:20:34.049Z"
+    },
+    {
+        "key": "datr",
+        "value": "X8fcaFKcinDEGamHYyFahoBb",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2025-11-07T17:20:34.049Z",
+        "lastAccessed": "2025-11-07T17:20:34.049Z"
+    },
+    {
+        "key": "dpr",
+        "value": "2.700000047683716",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2025-11-07T17:20:34.049Z",
+        "lastAccessed": "2025-11-07T17:20:34.049Z"
+    },
+    {
+        "key": "vpd",
+        "value": "v1%3B775x400x2.700000047683716",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2025-11-07T17:20:34.049Z",
+        "lastAccessed": "2025-11-07T17:20:34.049Z"
+    },
+    {
+        "key": "locale",
+        "value": "en_US",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2025-11-07T17:20:34.049Z",
+        "lastAccessed": "2025-11-07T17:20:34.049Z"
+    },
+    {
+        "key": "pas",
+        "value": "61556698541010%3AXc6jxoqBJc%2C61567333027225%3AkdHfiaoESx%2C61575222015811%3A3F26kciOh0%2C61569342692458%3A8GUEvU8LKs%2C100058085520102%3A7A7de50BOy%2C61554676084025%3AbKlCCw2IdG%2C61556595238526%3A6Cl8HfhsN3%2C61568483307243%3AoyPLYAdLP0%2C61579853908441%3AZoRpRHRUsd%2C61583226778968%3ALprbAkMdSb",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2025-11-07T17:20:34.049Z",
+        "lastAccessed": "2025-11-07T17:20:34.049Z"
+    },
+    {
+        "key": "m_pixel_ratio",
+        "value": "2.700000047683716",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2025-11-07T17:20:34.049Z",
+        "lastAccessed": "2025-11-07T17:20:34.049Z"
+    },
+    {
+        "key": "wd",
+        "value": "400x912",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2025-11-07T17:20:34.049Z",
+        "lastAccessed": "2025-11-07T17:20:34.049Z"
+    },
+    {
+        "key": "c_user",
+        "value": "61583226778968",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2025-11-07T17:20:34.049Z",
+        "lastAccessed": "2025-11-07T17:20:34.049Z"
+    },
+    {
+        "key": "xs",
+        "value": "49%3AYtL7ZvZfKXKg7A%3A2%3A1762533206%3A-1%3A-1",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2025-11-07T17:20:34.049Z",
+        "lastAccessed": "2025-11-07T17:20:34.049Z"
+    },
+    {
+        "key": "fr",
+        "value": "0GFTzyfHi6n5ZwZhh.AWenkSsaa_JzGkkDCNsKG_1Hbfkh6SMXjLIOSzqQdvWATwfs1Qk.BozAVS..AAA.0.0.BpDh9Y.AWczXafKB9KfdsIobfkpGH749oU",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2025-11-07T17:20:34.049Z",
+        "lastAccessed": "2025-11-07T17:20:34.049Z"
+    },
+    {
+        "key": "fbl_st",
+        "value": "101716956%3BT%3A29375553",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2025-11-07T17:20:34.049Z",
+        "lastAccessed": "2025-11-07T17:20:34.049Z"
+    },
+    {
+        "key": "wl_cbv",
+        "value": "v2%3Bclient_version%3A2976%3Btimestamp%3A1762533208",
+        "domain": "facebook.com",
+        "path": "/",
+        "hostOnly": false,
+        "creation": "2025-11-07T17:20:34.049Z",
+        "lastAccessed": "2025-11-07T17:20:34.049Z"
     }
-});
-
-global.startCount = 0;
-
-function startBot(errorMessage) {
-    if (errorMessage) {
-        logger.error(errorMessage);
-    }
-
-    const botProcess = spawn('node', ['--trace-warnings', 'main.js'], {
-        cwd: __dirname,
-        stdio: 'inherit',
-        shell: true
-    });
-
-    botProcess.on('close', code => {
-        if (code !== 0 && global.startCount < 3) {
-            global.startCount++;
-            logger.warn(`Bot exited with code ${code}. Restarting (${global.startCount}/3)...`);
-            startBot();
-        } else {
-            logger.error(`Bot stopped after ${global.startCount} restarts.`);
-        }
-    });
-
-    botProcess.on('error', err => {
-        logger.error(`Bot process error: ${JSON.stringify(err)}`);
-    });
-}
-
-// Fetch update info with fallback
-(async () => {
-    try {
-        const response = await axios.get('https://raw.githubusercontent.com/Shahad-ot-Belal/SH-BOT/main/package.json');
-        logger.info(`Update description: ${response.data.description}`);
-        logger.info(`Update version: ${response.data.version}`);
-        logger.info(`Update content: ${JSON.stringify(response.data)}`);
-    } catch (err) {
-        logger.error(`Fetch update error: ${err.message}`);
-    }
-
-    startBot();
-})();
+]
